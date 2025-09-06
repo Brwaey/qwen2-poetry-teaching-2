@@ -1,0 +1,14 @@
+# 基础依赖
+torch>=1.8.0          # 支持1.8.0及以上版本
+jieba==0.42.1         # 中文分词库
+tqdm==4.66.1          # 进度条显示
+numpy==1.26.3         # 数值计算库
+
+# 可选依赖
+matplotlib==3.8.2     # 用于绘制损失曲线
+
+# 安装说明：
+# 1. 通用安装：pip install -r requirements.txt
+# 2. CPU环境：pip install torch==1.8.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
+# 3. GPU环境：pip install torch==1.8.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
+# 4. Python版本要求：3.8~3.10
