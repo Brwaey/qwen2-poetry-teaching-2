@@ -1,14 +1,16 @@
-# 基础依赖
-torch>=1.8.0          # 支持1.8.0及以上版本
-jieba==0.42.1         # 中文分词库
-tqdm==4.66.1          # 进度条显示
-numpy==1.26.3         # 数值计算库
+# 基础依赖（确保原诗匹配效果）
+torch>=1.8.0          # 最低1.8.0，建议2.0.0+（稳定性更好）
+jieba==0.42.1         # 中文分词（仅用于词汇表构建，生成时用单字分词）
+tqdm==4.66.1          # 进度条显示（训练/生成进度）
+numpy==1.26.3         # 数值计算（位置编码生成）
+pickle5==0.0.11       # 确保原诗库正确序列化/反序列化（Python 3.8+）
+editdistance==0.6.2   # 计算字符串编辑距离（容错匹配用）
 
-# 可选依赖
-matplotlib==3.8.2     # 用于绘制损失曲线
+# 可选依赖（用于损失曲线绘制）
+matplotlib==3.8.2     # 绘图库（生成训练损失曲线，非必需）
 
 # 安装说明：
 # 1. 通用安装：pip install -r requirements.txt
 # 2. CPU环境：pip install torch==1.8.0+cpu -f https://download.pytorch.org/whl/torch_stable.html
-# 3. GPU环境：pip install torch==1.8.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
-# 4. Python版本要求：3.8~3.10
+# 3. GPU环境（CUDA 11.8）：pip install torch==2.0.0+cu118 -f https://download.pytorch.org/whl/torch_stable.html
+# 4. Python版本：3.8~3.10（推荐3.9）
